@@ -1,9 +1,23 @@
  $(document).ready(start);
 
  function start(){
-   $('#show-this-on-click').addClass('hide');
+  //  $('#show-this-on-click').addClass('hide');
+  $('.readmore').click(showMore);
+  $('.readless').click(showLess);
+  $('learnmore').click(LearnMore);
+  $('hide').click(LearnLess);
+ };
+
+ function showMore(e) {
+   e.preventDefault();
+   $('#show-this-on-click').slideDown();
+   $('.readmore').hide();
+   $('.readless').show();
  }
 
-   $('.readmore').on('click', function() {
-     $(this).next('#show-this-on-click').toggleClass('hide');
-   })
+ function showLess(e) {
+   e.preventDefault();
+   $('#show-this-on-click').slideUp();
+   $('.readless').hide();
+   $('.readmore').show();
+ }
